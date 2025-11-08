@@ -3,27 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>CALCULADORA</title>
 </head>
 <body>
-    <!-- ****************** practica ****************** -->
-    <div class="containt">
-        <div class="containt_item">
-            <div class="item1">1</div>
-            <div class="item2">2</div>
-            <div class="item3">3</div>
-            <div class="item4">4</div>
-            <div class="item5">5</div>
-            <div class="item6">6</div>
-            <div class="item7">7</div>
+    <div class="box_containt">
+        <div class="box_item">
+            <input  class="input" type="text" name="" id="display">
+            <button class="btd_op" onclick="limpiar()">AC</button>
+            <button class="btd_op" onclick="binarioAEntero()">EB</button>
+            <button class="btd_op" onclick="numDisplay('%')">%</button>
+            <button class="btd" onclick="numDisplay('/')">&divide;</button>
+            <button onclick="numDisplay(1)">1</button>
+            <button onclick="numDisplay(2)">2</button>
+            <button onclick="numDisplay(4)">4</button>
+            <button class="btd" onclick="operar('*')">x</button>
+            <button onclick="numDisplay(5)">5</button>
+            <button onclick="numDisplay(6)">6</button>
+            <button onclick="numDisplay(3)">3</button>
+            <button class="btd" onclick="operar('-')">-</button>
+            <button onclick="numDisplay(8)">8</button>
+            <button onclick="numDisplay(9)">9</button>
+            <button onclick="numDisplay(0)">0</button>
+            <button class="btd" onclick="operar('+')">+</button>
+            <button onclick="numDisplay('/')"><img src="icon_cal.png" class="img"></button>          
+            <button onclick="numDisplay(7)">7</button>
+            <button onclick="convertirABinario()">Bi</button>
+            <button onclick="igual()" class="btd">=</button>     
         </div>
     </div>
-    
-<!-- ******************* styles ********************* -->
 
-
-<!-- ****************** js ****************** -->
-    <script src="script.js"></script>
 </body>
 </html>
+
+
