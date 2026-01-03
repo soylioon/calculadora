@@ -79,25 +79,30 @@ body {
 @media (max-width: 576px) {
   html,
   body {
+    margin: 0;
+    padding: 0;
     background-color: #000;
     overflow: hidden;
-    height: 100%;
   }
 
   .box_containt {
     width: 100%;
-    height: 100dvh; /* 👈 viewport dinámico real */
+    height: 100svh; /* 👈 ALTURA REAL USABLE */
     margin: 0;
+    display: flex;
   }
 
   .box_item {
     width: 100%;
-    height: 100%;
+    height: auto; /* 👈 CLAVE: NO forzar 100% */
     padding: 20px;
-    padding-bottom: calc(20px + env(safe-area-inset-bottom)); /* 👈 CLAVE */
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
     gap: 12px;
     border-radius: 0;
-    grid-template-rows: 1.2fr repeat(5, 1fr);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto repeat(5, 1fr);
   }
 
   .input {
@@ -109,7 +114,7 @@ body {
 
   .box_item button {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1 / 1; /* 👈 evita que se salgan */
     max-width: none;
     max-height: none;
     border-radius: 50%;
