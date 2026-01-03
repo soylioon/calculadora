@@ -79,22 +79,31 @@ body {
 @media (max-width: 576px) {
   html,
   body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #000;
+    background-color: #000 !important;
     overflow: hidden;
+  }
+
+  body {
+    min-height: 100svh;
+    min-height: 100dvh;
+    background-color: #000 !important;
   }
 
   .box_containt {
     width: 100%;
-    height: 100svh; /* 👈 ALTURA REAL USABLE */
+    height: 100svh; /* viewport seguro */
     margin: 0;
     display: flex;
+    background-color: #000;
   }
 
   .box_item {
     width: 100%;
-    height: auto; /* 👈 CLAVE: NO forzar 100% */
+    height: auto;
     padding: 20px;
     padding-bottom: calc(20px + env(safe-area-inset-bottom));
     gap: 12px;
@@ -103,6 +112,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto repeat(5, 1fr);
+    background-color: #000;
   }
 
   .input {
@@ -114,7 +124,7 @@ body {
 
   .box_item button {
     width: 100%;
-    aspect-ratio: 1 / 1; /* 👈 evita que se salgan */
+    aspect-ratio: 1 / 1;
     max-width: none;
     max-height: none;
     border-radius: 50%;
@@ -134,29 +144,5 @@ body {
   .img {
     max-width: 28px;
     max-height: 28px;
-  }
-}
-
-@media (max-width: 576px) {
-  html,
-  body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #000 !important;
-    overflow: hidden;
-  }
-
-  body {
-    min-height: 100svh;
-    min-height: 100dvh;
-    background-color: #000 !important;
-  }
-
-  .box_containt {
-    background-color: #000;
-    width: 100%;
-    height: 100%;
   }
 }
