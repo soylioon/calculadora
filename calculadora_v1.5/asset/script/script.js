@@ -1,5 +1,11 @@
 let expression = "";
 
+document.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (navigator.vibrate) navigator.vibrate(30);
+    });
+});
+
 const display = document.getElementById("display");
 
 function numDisplay(number) {
