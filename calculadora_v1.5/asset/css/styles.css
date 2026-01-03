@@ -139,3 +139,23 @@ body {
     max-height: 28px;
   }
 }
+
+/* ===== pc ===== */
+@media (min-width: 577px) {
+  .box_containt {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+  }
+
+  .box_item {
+    grid-row: 2;
+    justify-self: center;
+
+    width: 14rem;
+    height: 23rem;
+
+    transform: scale(1.8);
+    transform-origin: center;
+  }
+}
