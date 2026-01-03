@@ -1,22 +1,41 @@
+/* ===== RESET BÁSICO ===== */
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: #222;
 }
 
-/* ===== TU DISEÑO ORIGINAL (DESKTOP) ===== */
+/* ===== CONTENEDOR ===== */
+.box_containt {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== DESKTOP (DISEÑO ORIGINAL) ===== */
 .box_item {
   background-color: #000;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
   gap: 3px;
+
   width: 12rem;
   height: 20rem;
   border-radius: 10px;
   padding: 13px;
+
+  box-shadow: 0 0 3px 0 #000;
 }
 
+/* ===== DISPLAY ===== */
 .input {
   background-color: #000;
   color: #fff;
@@ -24,8 +43,11 @@ body {
   border-radius: 7px;
   border: none;
   margin: 15px;
+  font-size: 1.4rem;
+  outline: none;
 }
 
+/* ===== BOTONES ===== */
 .box_item button {
   max-width: 45px;
   max-height: 44px;
@@ -45,14 +67,31 @@ body {
 }
 
 .img {
+  display: block;
+  margin: auto;
   max-width: 20px;
+  max-height: 23px;
 }
 
-/* ===== 📱 MÓVIL: ESTILO IPHONE 11 ===== */
+/* ================================================= */
+/* =================== 📱 MÓVIL ==================== */
+/* ================================================= */
 @media (max-width: 576px) {
+  html,
+  body {
+    background-color: #000;
+    overflow: hidden;
+  }
+
+  .box_containt {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
   .box_item {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     padding: 20px;
     gap: 12px;
     border-radius: 0;
@@ -60,9 +99,9 @@ body {
   }
 
   .input {
+    margin: 0 0 12px 0;
     font-size: 3rem;
     text-align: right;
-    margin: 0 0 10px 0;
     padding-right: 10px;
   }
 
@@ -86,27 +125,7 @@ body {
   }
 
   .img {
-    width: 28px;
-  }
-}
-
-@media (max-width: 576px) {
-  html,
-  body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #000;
-  }
-
-  .box_containt {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-  }
-
-  .box_item {
-    width: 100%;
-    height: 100%;
+    max-width: 28px;
+    max-height: 28px;
   }
 }
