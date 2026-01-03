@@ -81,11 +81,12 @@ body {
   body {
     background-color: #000;
     overflow: hidden;
+    height: 100%;
   }
 
   .box_containt {
     width: 100%;
-    height: 100%;
+    height: 100dvh; /* 👈 viewport dinámico real */
     margin: 0;
   }
 
@@ -93,6 +94,7 @@ body {
     width: 100%;
     height: 100%;
     padding: 20px;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom)); /* 👈 CLAVE */
     gap: 12px;
     border-radius: 0;
     grid-template-rows: 1.2fr repeat(5, 1fr);
